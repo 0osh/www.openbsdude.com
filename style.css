@@ -1,13 +1,13 @@
 body {
-    background-color: black;
-    text-align: center;
-    font-family: "Lucida Console", monospace;
-    font-size: 1.5em;
-    color: #1dde16;
+	background-color: black;
+	text-align: center;
+	font-family: "Lucida Console", monospace;
+	font-size: 1.5em;
+	color: #1dde16;
 }
 
 .heading {
-    font-family: "Comic Sans MS", cursive;
-    color: red;
-    font-size: 4em;
+	font-family: "Comic Sans MS", cursive;
+	color: red;
+	font-size: 4em;
 }
