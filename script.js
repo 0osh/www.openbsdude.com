@@ -28,13 +28,13 @@ puffy.onmouseover = () => {
 	document.body.style.cursor = "none";
 	puffy.style.rotate = "0rad";
 	document.body.onmousemove = (e) => {
-			let absRot = Math.atan2(-e.movementY, -e.movementX);
-			let flip = absRot > Math.PI / 2 || absRot < Math.PI / -2;
-			puffy.style.rotate = absRot - (flip ?  Math.PI : 0) + "rad";
-			puffy.style.scale = (flip ? -1 : 1) + " 1";
-			
-			let moveY = Math.sin(absRot);
-			let moveX = Math.cos(absRot);
+		let absRot = Math.atan2(-e.movementY, -e.movementX);
+		let flip = absRot > Math.PI / 2 || absRot < Math.PI / -2;
+		puffy.style.rotate = absRot - (flip ?  Math.PI : 0) + "rad";
+		puffy.style.scale = (flip ? -1 : 1) + " 1";
+		
+		let moveY = Math.sin(absRot);
+		let moveX = Math.cos(absRot);
 		puffy.style.top = e.y - (puffyRect.height / 2) + "px";
 		puffy.style.left = e.x - (puffyRect.width / 2) + "px";
 	}
