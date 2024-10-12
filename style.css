@@ -4,10 +4,19 @@ body {
 	font-family: "Lucida Console", monospace;
 	font-size: 1.5em;
 	color: #1dde16;
+	min-height: 100vh;
+	margin: 0;
 }
 
 .heading {
+	margin: 0;
 	font-family: "Comic Sans MS", cursive;
 	color: red;
 	font-size: 4em;
+}
+
+#puffy {
+	position: fixed;
+	top: 200px;
+	left: 200px;
 }
