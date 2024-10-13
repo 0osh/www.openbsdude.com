@@ -14,7 +14,6 @@ let prevMovements = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0,
 
 puffy.onclick = () => {
 	puffy.style.position = "absolute";
-	console.log(puffyRect.x);
 	puffy.style.top = puffyRect.y + "px";
 	puffy.style.left = puffyRect.x + "px";
 
@@ -38,7 +37,6 @@ puffy.onclick = () => {
 				i.shift();
 				i.push(j == 0 ? -e.movementX : -e.movementY);
 			});
-			console.log(prevMovements[1].average());
 			let absRot = Math.atan2(prevMovements[1].average(), prevMovements[0].average());
 			//let absRot = Math.atan2(-e.movementY, -e.movementX);
 			let flip = absRot > Math.PI / 2 || absRot < Math.PI / -2;
