@@ -1,10 +1,16 @@
 function docID(element) {return document.getElementById(element);}
+Array.prototype.average = function() {
+    if (this.length === 0) return 0;
+    let sum = this.reduce((total, i) => total + i, 0);
+    return sum / this.length;
+};
 
 // WALLLLL
 
 let puffy = docID("puffy");
 let mouseX, mouseY;
 let puffyRect = puffy.getBoundingClientRect();
+let prevMovements = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 
 puffy.onclick = () => {
 	puffy.style.position = "absolute";
@@ -28,7 +34,13 @@ puffy.onclick = () => {
 		puffy.style.rotate = "0rad";
 		puffy.style.pointerEvents = "none";
 		document.body.onmousemove = (e) => {
-			let absRot = Math.atan2(-e.movementY, -e.movementX);
+			prevMovements.forEach((i, j) => {
+				i.shift();
+				i.push(j == 0 ? -e.movementX : -e.movementY);
+			});
+			console.log(prevMovements[1].average());
+			let absRot = Math.atan2(prevMovements[1].average(), prevMovements[0].average());
+			//let absRot = Math.atan2(-e.movementY, -e.movementX);
 			let flip = absRot > Math.PI / 2 || absRot < Math.PI / -2;
 			puffy.style.rotate = absRot - (flip ?  Math.PI : 0) + "rad";
 			puffy.style.scale = (flip ? -1 : 1) + " 1";
