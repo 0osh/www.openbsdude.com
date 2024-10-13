@@ -16,8 +16,5 @@ body {
 }
 
 #puffy {
-	position: fixed;
-	top: 200px;
-	left: 200px;
 	user-select: none;
 }
